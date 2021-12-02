@@ -1,0 +1,87 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Tue Nov 30 12:06:39 2021
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+FPmul                  5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+FPmul                                  3.97e+03 1.04e+04 1.81e+05 1.46e+04 100.0
+  I4 (FPmul_stage4)                      91.058  486.825 6.23e+03  584.118   4.0
+    I3 (PackFP)                          36.436  292.391 3.11e+03  331.937   2.3
+    I1 (FPnormalize_SIG_width28_1)       35.834   73.885 1.47e+03  111.191   0.8
+  I3 (FPmul_stage3)                     196.147  781.413 9.12e+03  986.680   6.8
+    I11 (FPround_SIG_width28)            96.711  509.856 5.91e+03  612.479   4.2
+      add_43 (FPround_SIG_width28_DW01_inc_1)
+                                         51.234  189.582 2.96e+03  243.772   1.7
+    I9 (FPnormalize_SIG_width28_0)       81.490   63.845 1.48e+03  146.812   1.0
+  i_ff_N_levels_isZ (flip_flop_N_level_rst_n_N2_1)
+                                       4.69e-03   19.074  152.186   19.231   0.1
+    FD_1 (flipflop_rst_n_1)            2.35e-03    9.537   76.093    9.616   0.1
+    FD_0 (flipflop_rst_n_2)            2.35e-03    9.537   76.093    9.616   0.1
+  i_ff_N_levels_isNan (flip_flop_N_level_rst_n_N2_2)
+                                       2.34e-02   19.013  152.461   19.189   0.1
+    FD_1 (flipflop_rst_n_3)            1.17e-02    9.506   76.231    9.594   0.1
+    FD_0 (flipflop_rst_n_4)            1.17e-02    9.507   76.231    9.595   0.1
+  i_ff_N_levels_isINF (flip_flop_N_level_rst_n_N2_3)
+                                          0.000   19.063  152.142   19.215   0.1
+    FD_1 (flipflop_rst_n_5)               0.000    9.532   76.071    9.608   0.1
+    FD_0 (flipflop_rst_n_6)               0.000    9.532   76.071    9.608   0.1
+  i_reg_N_levels_SIG_in (reg_N_level_rst_n_M28_N2)
+                                         24.370  276.290 2.09e+03  302.753   2.1
+    r_1 (REG_RST_N_N28_1)                24.370  276.290 2.09e+03  302.753   2.1
+    r_0 (REG_RST_N_N28_0)                 0.000    0.000    0.000    0.000   0.0
+  i_ff_N_levels_SIGN_out (flip_flop_N_level_rst_n_N2_4)
+                                          0.415   14.341  158.214   14.914   0.1
+    FD_1 (flipflop_rst_n_7)               0.207    7.169   79.107    7.455   0.1
+    FD_0 (flipflop_rst_n_8)               0.208    7.172   79.107    7.459   0.1
+  i_ff_N_levels_EXP_pos (flip_flop_N_level_rst_n_N2_5)
+                                          0.216   14.617  157.615   14.990   0.1
+    FD_1 (flipflop_rst_n_9)               0.108    7.308   78.807    7.495   0.1
+    FD_0 (flipflop_rst_n_10)              0.108    7.308   78.808    7.495   0.1
+  i_ff_N_levels_EXP_neg (flip_flop_N_level_rst_n_N2_0)
+                                          0.220   14.607  157.651   14.985   0.1
+    FD_1 (flipflop_rst_n_11)              0.110    7.304   78.825    7.493   0.1
+    FD_0 (flipflop_rst_n_0)               0.110    7.303   78.826    7.492   0.1
+  i_reg_N_levels_EXP_in (reg_N_level_rst_n_M8_N2)
+                                         11.321  130.648 1.27e+03  143.236   1.0
+    r_1 (REG_RST_N_N8_1)                  8.917   65.419  632.937   74.969   0.5
+    r_0 (REG_RST_N_N8_0)                  2.404   65.230  632.926   68.267   0.5
+  I2 (FPmul_stage2)                    3.54e+03 7.92e+03 1.51e+05 1.16e+04  79.7
+    I_mult/add_257 (FPmul_stage2_DW01_add_8)
+                                        397.869  694.100 1.13e+04 1.10e+03   7.6
+  I1 (FPmul_stage1)                      11.055   13.151 2.02e+03   26.224   0.2
+    I1 (UnpackFP_1)                       4.551    6.131  807.079   11.489   0.1
+    I0 (UnpackFP_0)                       6.207    6.163  817.237   13.187   0.1
+  REGB (reg_en_rst_n_N32_1)              26.619  198.801 2.56e+03  227.980   1.6
+  REGA (reg_en_rst_n_N32_0)              29.177  198.720 2.53e+03  230.430   1.6
+1
