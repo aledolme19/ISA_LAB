@@ -1,8 +1,8 @@
-In this section, we are performing two different logic synthesis of the fine grain pipeline structure:
+In this section, we are performing two different logic synthesis of the fine grain pipeline structure, using a MBE multiplier:
    -Logic Synthesis with compile and optmize_register commands;
     -Logic Synthesis with compile ultra command;
 
-The different folder are organized as usual.
+The different folders are organized as usual.
 Moreover, both in syn and in netlist/results folders we have two different scripts and two 
 different sets of results for each of the three synthesis:
 
@@ -11,5 +11,7 @@ different sets of results for each of the three synthesis:
 - CLK pedix present: we are synthetizing with 0 ns clock, but imposing the proper clock period in order to
 find more accurate power's results;
 
-Moreover, a "RetimingMoreRegisters" analysis has been performed, adding different 
-layers of registers in order to see if there are any improvements in the design.
+Two main cases were considered:
+	- multiplier with only 1 pipeline register
+	- multiplier with 2 pipeline registers
+In both cases syntheses without ungroup attribute, ungrouping only the MBE multiplier and ungrouping all the architecture were performed.
